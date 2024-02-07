@@ -1,0 +1,18 @@
+---
+- name: Gather OS facts and data
+  include_tasks: gather_facts.yml
+
+- name: Check for licensed software
+  include_tasks: check_licensed.yml
+
+# - name: Gather Oracle database details
+#   include_tasks: oracle_details.yml
+#   when: '"oracle" in licensed_software'
+
+- name: Output data to CSV
+  include_tasks: output_csv.yml
+  when: output_to_csv
+
+- name: Push data to API
+  include_tasks: push_api.yml
+  when: push_to_api

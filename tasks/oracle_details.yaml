@@ -1,0 +1,5 @@
+---
+- name: Check Oracle Database version
+  shell: sqlplus -s / as sysdba @version.sql
+  register: oracle_version
+  ignore_errors: true

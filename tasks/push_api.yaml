@@ -1,0 +1,13 @@
+---
+- name: Convert gathered data to JSON
+  ansible.builtin.set_fact:
+    data_json: "{{ disk_info.stdout | from_json }}"
+
+- name: Push data to API
+  ansible.builtin.uri:
+    url: "{{ api_url }}"
+    method: POST
+    body_format: json
+    body: "{{ data_json }}"
+    headers:
+      Content-Type: "application/json"

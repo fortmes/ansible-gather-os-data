@@ -1,0 +1,6 @@
+---
+- name: Check for licensed software presence
+  ansible.builtin.command: which {{ item }}
+  loop: "{{ licensed_software }}"
+  register: software_presence
+  ignore_errors: true

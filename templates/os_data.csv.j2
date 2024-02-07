@@ -1,0 +1,4 @@
+"Disk Name","Filesystem Type","Size","Mount Point"
+{% for disk in disk_info.stdout_lines %}
+"{{ disk.NAME }}","{{ disk.FSTYPE }}","{{ disk.SIZE }}","{{ disk.MOUNTPOINT }}"
+{% endfor %}

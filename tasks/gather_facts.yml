@@ -1,0 +1,19 @@
+---
+- name: Gather common system facts
+  ansible.builtin.setup:
+
+- name: Get disk information
+  ansible.builtin.shell: lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT --json
+  register: disk_info
+
+- name: List all local users
+  ansible.builtin.getent:
+    database: passwd
+
+- name: Get OS version
+  ansible.builtin.command: uname -a
+  register: os_version
+
+- name: List running processes
+  ansible.builtin.shell: ps -eo user,pid,cmd
+  register: running_processes

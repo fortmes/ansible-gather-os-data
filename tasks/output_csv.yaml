@@ -1,0 +1,5 @@
+---
+- name: Create CSV from gathered data
+  ansible.builtin.template:
+    src: os_data.csv.j2
+    dest: "{{ csv_output_path }}"

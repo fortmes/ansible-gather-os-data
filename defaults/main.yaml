@@ -1,0 +1,8 @@
+---
+output_to_csv: true
+push_to_api: false
+api_url: "http://example.com/api/data"
+licensed_software:
+  - oracle
+  - weblogic
+csv_output_path: "/tmp/os_data.csv"
