@@ -13,6 +13,6 @@
   include_tasks: output_csv.yml
   when: output_to_csv
 
-- name: Push data to API
-  include_tasks: push_api.yml
-  when: push_to_api
+#- name: Push data to API
+#  include_tasks: push_api.yml
+#  when: push_to_api
