@@ -1,4 +1,7 @@
 ---
+- name: Print data to console
+  ansible.builtin.debug:
+    msg: "{{ os_data }}"
 - name: Create CSV from gathered data
   ansible.builtin.template:
     src: os_data.csv.j2
